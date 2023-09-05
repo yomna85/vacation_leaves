@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+    <changeSet id="1686221382356-1" author="HP">
+        <insert tableName="role">
+            <column name="english_name" value="EMPLOYEE"/>
+            <column name="code" value="EMPLOYEE"/>
+            <column name="is_enabled" valueBoolean="true"/>
+            <column name="version" valueNumeric="0"/>
+            <column name="created_by" value=""/>
+            <column name="modified_by" value=""/>
+            <column name="created_date" valueDate="now()"/>
+            <column name="modified_date" valueDate="now()"/>
+        </insert>
+        <insert tableName="role">
+            <column name="english_name" value="ADMIN"/>
+            <column name="code" value="ADMIN"/>
+            <column name="is_enabled" valueBoolean="true"/>
+            <column name="version" valueNumeric="0"/>
+            <column name="created_by" value=""/>
+            <column name="modified_by" value=""/>
+            <column name="created_date" valueDate="now()"/>
+            <column name="modified_date" valueDate="now()"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

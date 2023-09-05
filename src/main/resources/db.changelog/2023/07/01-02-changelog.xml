@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+    <changeSet id="1685617934702-9" author="HP (generated)">
+        <insert tableName="request_status">
+            <column name="english_name" value="NEW_REQUEST"/>
+            <column name="code" value="3"/>
+            <column name="is_enabled" valueBoolean="false"/>
+            <column name="version" valueNumeric="0"/>
+            <column name="created_by" value=""/>
+            <column name="modified_by" value=""/>
+            <column name="created_date" valueDate="now()"/>
+            <column name="modified_date" valueDate="now()"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

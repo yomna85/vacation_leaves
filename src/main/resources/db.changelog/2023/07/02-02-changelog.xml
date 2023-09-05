@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1683466093718-4" author="HP (generated)">
+        <createTable tableName="vacation_leave">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_vacation_leave"/>
+            </column>
+            <column name="version" type="INT"/>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="modified_by" type="VARCHAR(255)"/>
+            <column name="created_date" type="DATETIME"/>
+            <column name="modified_date" type="DATETIME"/>
+            <column name="employee_id" type="INT"/>
+            <column name="request_id" type="INT"/>
+            <column name="vacation_type_id" type="INT"/>
+        </createTable>
+
+    </changeSet>
+
+    <changeSet id="1687436577996-2" author="HP (generated)">
+        <addForeignKeyConstraint baseColumnNames="employee_id" baseTableName="vacation_leave"
+                                 constraintName="FK_VACATIONLEAVE_ON_EMPLOYEE" referencedColumnNames="id"
+                                 referencedTableName="employee"/>
+        <addForeignKeyConstraint baseColumnNames="request_id"  baseTableName="vacation_leave"
+                                 constraintName="FK_VACATIONLEAVE_ON_REQUEST"
+                                 referencedColumnNames="id"
+                                 referencedTableName="request"/>
+        <addForeignKeyConstraint baseColumnNames="vacation_type_id"  baseTableName="vacation_leave"
+                                 constraintName="FK_VACATIONLEAVE_ON_VACATIONTYPE"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vacation_type"/>
+
+    </changeSet>
+</databaseChangeLog>
